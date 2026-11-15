@@ -22,3 +22,5 @@ Upon inspecting the repository (nginx.hcl, Dockerfile, and index.html) and runni
 * *Nomad Status:* nomad job status nginx-app confirms Status = running with Desired: 1, Placed: 1, Healthy: 1.
 * *Consul Service Discovery:* consul catalog services and the Consul Web UI (port 8500) show nginx-app registered with a passing health check.
 * *Browser Access:* Accessed the dynamically assigned host port via browser and verified the custom HTML page loads properly.
+<img width="1355" height="646" alt="Screenshot (10)" src="https://github.com/user-attachments/assets/5830e8a6-6593-4f0e-b995-05f468ed0b0a" />
+<img width="1360" height="692" alt="Screenshot (11)" src="https://github.com/user-attachments/assets/4612c090-646a-48df-8e0d-472f867bc334" />
