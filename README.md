@@ -24,4 +24,4 @@ Upon inspecting the repository (nginx.hcl, Dockerfile, and index.html) and runni
 * *Health Endpoint & Consul Discovery:* curl -i http://localhost:<port>/healthz returns HTTP/1.1 200 OK, and consul catalog services / Consul Web UI (port 8500) show nginx-app passing the /healthz health check.
 * *Browser Access:* Accessed the dynamically assigned host port via browser and verified both / and /healthz endpoints respond properly.
 <img width="1365" height="693" alt="Picture 1" src="https://github.com/user-attachments/assets/3e8514ee-f3b4-4f2a-9746-70186e97428f" />
-<img width="1366" height="768" alt="Picture 2" src="https://github.com/user-attachments/assets/0ff67fe8-04da-441b-a973-ca4c40c7be37" />
+<img width="1365" height="690" alt="Picture 2" src="https://github.com/user-attachments/assets/051d3038-adf1-4f57-a914-8e6193e4cf13" />
