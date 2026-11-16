@@ -18,7 +18,8 @@ job "nginx-app" {
         image = "nginx:alpine"
         ports = ["http"]
         volumes = [
-          "local/index.html:/usr/share/nginx/html/index.html"
+          "local/index.html:/usr/share/nginx/html/index.html",
+          "local/default.conf:/etc/nginx/conf.d/default.conf"
         ]
       }
 
@@ -35,6 +36,27 @@ EOH
         destination = "local/index.html"
       }
 
+      template {
+        data = <<EOH
+server {
+    listen 80;
+    server_name localhost;
+
+    location / {
+        root /usr/share/nginx/html;
+        index index.html;
+    }
+
+    location /healthz {
+        access_log off;
+        add_header Content-Type text/plain;
+        return 200 "OK\n";
+    }
+}
+EOH
+        destination = "local/default.conf"
+      }
+
       resources {
         cpu    = 100
         memory = 128
@@ -46,7 +68,7 @@ EOH
 
         check {
           type     = "http"
-          path     = "/"
+          path     = "/healthz"
           interval = "10s"
           timeout  = "2s"
         }
